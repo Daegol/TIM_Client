@@ -11,11 +11,15 @@ import { AlertModule } from './shared';
 import { MDBBootstrapModule, ModalModule } from 'angular-bootstrap-md';
 import { AddHeaderInterceptor, AddHeaderInterceptorProvider } from './shared/interceptors/add-header.interceptor';
 import { ErrorInterceptorProvider } from './shared/interceptors/error.interceptor';
+import {ModalEditComponent} from './shared/modules/modal-edit/modal-edit.component';
+import {ModalAddComponent} from './shared/modules/modal-add/modal-add.component';
 import { ModalAddOutgoingSoldierComponent } from './shared/modules/modal-add-outgoing-soldier/modal-add-outgoing-soldier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ModalEditComponent,
+    ModalAddComponent,
     ModalAddOutgoingSoldierComponent
   ],
   imports: [
@@ -33,6 +37,7 @@ import { ModalAddOutgoingSoldierComponent } from './shared/modules/modal-add-out
   providers: [AddHeaderInterceptorProvider,
     ErrorInterceptorProvider
   ],
+  entryComponents: [ModalEditComponent, ModalAddComponent],
   entryComponents: [ModalAddOutgoingSoldierComponent],
   bootstrap: [AppComponent]
 })
