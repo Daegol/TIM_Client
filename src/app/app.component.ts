@@ -22,6 +22,9 @@ export class AppComponent implements OnInit {
       if (decodedToken.role === "Soldier") {
         this.router.navigate(["soldier"])
       }
+      if (decodedToken.role === "Soldier") {
+        this.router.navigate(["duty"]);
+      }
     }
   }
 

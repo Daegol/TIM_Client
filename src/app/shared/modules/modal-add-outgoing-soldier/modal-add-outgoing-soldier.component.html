@@ -1,0 +1,72 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">Dodaj użytkownika</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="validationForm">
+      <div class="row">
+        <div class="col">
+          <div class="md-form">
+            <input mdbInput mdbValidate formControlName="militaryRankForm" minLength="8" maxLength="25"
+                   type="text" class="form-control" id="form5">
+            <label for="form6">Stopień</label>
+            <mdb-error *ngIf="militaryRankForm.invalid && (militaryRankForm.dirty || militaryRankForm.touched)">
+              Musisz podać stopień
+            </mdb-error>
+            <mdb-success *ngIf="militaryRankForm.valid && (militaryRankForm.dirty || militaryRankForm.touched)">
+              Ok
+            </mdb-success>
+          </div>
+          <div class="md-form">
+            <input mdbInput mdbValidate formControlName="firstNameForm" minLength="8" maxLength="25"
+                   type="text" class="form-control" id="form6">
+            <label for="form6">Imię</label>
+            <mdb-error *ngIf="firstNameForm.invalid && (firstNameForm.dirty || firstNameForm.touched)">
+              Musisz podać imię
+            </mdb-error>
+            <mdb-success *ngIf="firstNameForm.valid && (firstNameForm.dirty || firstNameForm.touched)">
+              Ok
+            </mdb-success>
+          </div>
+          <div class="md-form">
+            <input mdbInput mdbValidate formControlName="lastNameForm" minLength="8" maxLength="25"
+                   type="text" class="form-control" id="form1">
+            <label for="form1">Nazwisko</label>
+            <mdb-error *ngIf="lastNameForm.invalid && (lastNameForm.dirty || lastNameForm.touched)">
+              Musisz podać nazwisko
+            </mdb-error>
+            <mdb-success *ngIf="lastNameForm.valid && (lastNameForm.dirty || lastNameForm.touched)">
+              Ok
+            </mdb-success>
+          </div>
+          <div class="md-form">
+            <input mdbInput mdbValidate formControlName="phoneForm" minLength="8" maxLength="25"
+                   type="tel" class="form-control" id="form7">
+            <label for="form7">Numer telefonu</label>
+            <mdb-error *ngIf="phoneForm.invalid && (phoneForm.dirty || phoneForm.touched)">
+              Numer telefonu niepoprawny
+            </mdb-error>
+            <mdb-success *ngIf="phoneForm.valid && (phoneForm.dirty || phoneForm.touched)">
+              Numer telefonu poprawny
+            </mdb-success>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+            (click)="modalRef.hide()" mdbWavesEffect>Zamknij
+    </button>
+    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect
+            [disabled]="validationForm.invalid" (click)="addRow()">Zapisz
+    </button>
+  </div>
+</div>

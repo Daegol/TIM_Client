@@ -16,14 +16,14 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'parent',
-  //   loadChildren: () =>
-  //     import('./parent-layout/parent-layout.module').then(
-  //       m => m.ParentLayoutModule
-  //     ),
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'duty',
+    loadChildren: () =>
+      import('./duty-layout/duty-layout.module').then(
+        m => m.DutyLayoutModule
+      ),
+    canActivate: [AuthGuard]
+  },
   // {
   //   path: 'student',
   //   loadChildren: () =>
