@@ -6,12 +6,7 @@ import { Soldier } from '../models/soldier';
 import { environment } from 'src/environments/environment';
 import { Guid } from 'guid-typescript';
 import {SoldiersInCompany} from '../models/soldiersInCompany';
-
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { SoldierTable } from './../models/soldierTable';
-import { environment } from 'src/environments/environment';
-import { Guid } from 'guid-typescript';
 import {outgoingSoldierAddDto} from "../models/outgoingSoldierAddDto";
 
 @Injectable({ providedIn: 'root' })
@@ -41,7 +36,7 @@ export class SoldierService {
     return this.http.get<SoldiersInCompany[]>(`${environment.apiUrl}soldier/stg/${classId}`);
   }
 
-  getAll(soldierOnDutyId: any) {
+  getAllLeaves(soldierOnDutyId: any) {
     return this.http.get<SoldierTable[]>(`${environment.apiUrl}OutgoingBook/outgoingSoldiers/${soldierOnDutyId}`);
   }
 
@@ -49,7 +44,7 @@ export class SoldierService {
     return this.http.post(`${environment.apiUrl}OutgoingBook/add`, soldier);
   }
 
-  delete(leaveId: any) {
+  deleteLeave(leaveId: any) {
     return this.http.delete(`${environment.apiUrl}/OutgoingBook/delete/${leaveId}`);
   }
   //

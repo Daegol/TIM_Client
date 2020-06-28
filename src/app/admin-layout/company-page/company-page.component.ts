@@ -17,7 +17,7 @@ export class CompanyPageComponent implements OnInit, AfterViewInit {
   @ViewChild(MdbTableDirective, { static: true }) mdbTable: MdbTableDirective;
   @ViewChild(MdbTablePaginationComponent, { static: true }) mdbTablePagination: MdbTablePaginationComponent;
   elements: CompanysTable[] = [];
-  headElements = ['Id', 'Nazwa', 'Wychowawca', 'Liczba uczniów', 'Akcja'];
+  headElements = ['Id', 'Nazwa', 'Dowódca', 'Liczba żołnierzy', 'Akcja'];
   tableNames = ['id', 'name', 'commander', 'soldiersNumber'];
   searchText = '';
   previous: string;

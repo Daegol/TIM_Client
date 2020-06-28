@@ -37,8 +37,7 @@ import { ModalAddOutgoingSoldierComponent } from './shared/modules/modal-add-out
   providers: [AddHeaderInterceptorProvider,
     ErrorInterceptorProvider
   ],
-  entryComponents: [ModalEditComponent, ModalAddComponent],
-  entryComponents: [ModalAddOutgoingSoldierComponent],
+  entryComponents: [ModalEditComponent, ModalAddComponent,ModalAddOutgoingSoldierComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

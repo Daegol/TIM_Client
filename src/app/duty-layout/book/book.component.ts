@@ -49,7 +49,7 @@ export class BookComponent implements OnInit {
   }
 
   getSoldiers(soldierOnDutyId: any) {
-    this.soldierService.getAll(soldierOnDutyId).pipe(first()).subscribe(
+    this.soldierService.getAllLeaves(soldierOnDutyId).pipe(first()).subscribe(
       data => {
         this.elements = data;
         this.mdbTable.setDataSource(this.elements);
@@ -87,7 +87,7 @@ export class BookComponent implements OnInit {
 
   removeRow(el: any) {
     const elementIndex = this.elements.findIndex((elem: any) => el === elem);
-    this.soldierService.delete(this.elements[elementIndex].pesel).pipe(first()).subscribe(
+    this.soldierService.deleteLeave(this.elements[elementIndex].pesel).pipe(first()).subscribe(
       success => {
         this.alertService.success('Użytkownik został usunięty');
         //this.getStudents();
