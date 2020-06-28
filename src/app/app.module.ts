@@ -11,10 +11,14 @@ import { AlertModule } from './shared';
 import { MDBBootstrapModule, ModalModule } from 'angular-bootstrap-md';
 import { AddHeaderInterceptor, AddHeaderInterceptorProvider } from './shared/interceptors/add-header.interceptor';
 import { ErrorInterceptorProvider } from './shared/interceptors/error.interceptor';
+import {ModalEditComponent} from './shared/modules/modal-edit/modal-edit.component';
+import {ModalAddComponent} from './shared/modules/modal-add/modal-add.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalEditComponent,
+    ModalAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,7 @@ import { ErrorInterceptorProvider } from './shared/interceptors/error.intercepto
   providers: [AddHeaderInterceptorProvider,
     ErrorInterceptorProvider
   ],
+  entryComponents: [ModalEditComponent, ModalAddComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,164 @@
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title w-100" id="myModalLabel">Dodaj użytkownika</h4>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="validationForm">
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="emailForm" minLength="8" maxLength="25"
+                                type="email" class="form-control" id="form9">
+                            <label for="form9">Email</label>
+                            <mdb-error *ngIf="emailForm.invalid && (emailForm.dirty || emailForm.touched)">
+                                Musisz podać email
+                            </mdb-error>
+                            <mdb-success *ngIf="emailForm.valid && (emailForm.dirty || emailForm.touched)">
+                                Email poprawny
+                            </mdb-success>
+                        </div>
+                      <div class="row">
+                      <div class="md-form col-md 2">
+                        <input mdbInput mdbValidate formControlName="militaryRankForm" minLength="8" maxLength="25"
+                               type="text" class="form-control" id="form11">
+                        <label for="form11">  St</label>
+                        <mdb-error *ngIf="militaryRankForm.invalid && (militaryRankForm.dirty || militaryRankForm.touched)">
+                          Musisz podać stopień
+                        </mdb-error>
+                        <mdb-success *ngIf="militaryRankForm.valid && (militaryRankForm.dirty || militaryRankForm.touched)">
+                          Ok
+                        </mdb-success>
+                      </div>
+                        <div class="md-form col-md-8">
+                            <input mdbInput mdbValidate formControlName="firstNameForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form6">
+                            <label for="form6">Imię</label>
+                            <mdb-error *ngIf="firstNameForm.invalid && (firstNameForm.dirty || firstNameForm.touched)">
+                                Musisz podać imię
+                            </mdb-error>
+                            <mdb-success *ngIf="firstNameForm.valid && (firstNameForm.dirty || firstNameForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                      </div>
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="peselForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form8">
+                            <label for="form8">PESEL</label>
+                            <mdb-error *ngIf="peselForm.invalid && (peselForm.dirty || peselForm.touched)">
+                                PESEL niepoprawny
+                            </mdb-error>
+                            <mdb-success *ngIf="peselForm.valid && (peselForm.dirty || peselForm.touched)">
+                                PESEL poprawny
+                            </mdb-success>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="passwordForm" minLength="10" maxLength="25"
+                                type="password" class="form-control" id="form10">
+                            <label for="form10">Hasło</label>
+                            <mdb-error *ngIf="passwordForm.invalid && (passwordForm.dirty || passwordForm.touched)">
+                                Hasło musi zawierać przynajmniej 10 znaków
+                            </mdb-error>
+                            <mdb-success *ngIf="passwordForm.valid && (passwordForm.dirty || passwordForm.touched)">
+                                Hasło poprawne
+                            </mdb-success>
+                        </div>
+                      <div class="row">
+                        <div class="md-form col-md-12">
+                            <input mdbInput mdbValidate formControlName="lastNameForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form1">
+                            <label for="form1">Nazwisko</label>
+                            <mdb-error *ngIf="lastNameForm.invalid && (lastNameForm.dirty || lastNameForm.touched)">
+                                Musisz podać nazwisko
+                            </mdb-error>
+                            <mdb-success *ngIf="lastNameForm.valid && (lastNameForm.dirty || lastNameForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                      </div>
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="phoneForm" minLength="8" maxLength="25"
+                                type="tel" class="form-control" id="form7">
+                            <label for="form7">Numer telefonu</label>
+                            <mdb-error *ngIf="phoneForm.invalid && (phoneForm.dirty || phoneForm.touched)">
+                                Numer telefonu niepoprawny
+                            </mdb-error>
+                            <mdb-success *ngIf="phoneForm.valid && (phoneForm.dirty || phoneForm.touched)">
+                                Numer telefonu poprawny
+                            </mdb-success>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="streetForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form5">
+                            <label for="form5">Ulica</label>
+                            <mdb-error *ngIf="streetForm.invalid && (streetForm.dirty || streetForm.touched)">
+                                Musisz podać ulicę
+                            </mdb-error>
+                            <mdb-success *ngIf="streetForm.valid && (streetForm.dirty || streetForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="houseNumberForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form4">
+                            <label for="form4">Numer</label>
+                            <mdb-error
+                                *ngIf="houseNumberForm.invalid && (houseNumberForm.dirty || houseNumberForm.touched)">
+                                Musisz podać numer
+                            </mdb-error>
+                            <mdb-success
+                                *ngIf="houseNumberForm.valid && (houseNumberForm.dirty || houseNumberForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="postCodeForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form3">
+                            <label for="form3">Kod</label>
+                            <mdb-error *ngIf="postCodeForm.invalid && (postCodeForm.dirty || postCodeForm.touched)">
+                                Musisz podać numer
+                            </mdb-error>
+                            <mdb-success *ngIf="postCodeForm.valid && (postCodeForm.dirty || postCodeForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="md-form">
+                            <input mdbInput mdbValidate formControlName="cityForm" minLength="8" maxLength="25"
+                                type="text" class="form-control" id="form2">
+                            <label for="form2">Miasto</label>
+                            <mdb-error *ngIf="cityForm.invalid && (cityForm.dirty || cityForm.touched)">
+                                Musisz podać miasto
+                            </mdb-error>
+                            <mdb-success *ngIf="cityForm.valid && (cityForm.dirty || cityForm.touched)">
+                                Ok
+                            </mdb-success>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                (click)="modalRef.hide()" mdbWavesEffect>Zamknij
+            </button>
+            <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect
+                [disabled]="validationForm.invalid" (click)="addRow()">Zapisz
+            </button>
+        </div>
+    </div>

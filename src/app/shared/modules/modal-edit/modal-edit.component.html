@@ -1,0 +1,66 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Edytuj użytkownika: {{editableRow.firstName}} {{editableRow.lastName}}</h4>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="form">
+            <div class="md-form">
+                <input id="id" type="text" class="form-control grey-text" formControlName="id" mdbInput>
+                <label for="id">ID</label>
+            </div>
+          <div class="md-form">
+            <input id="militaryRank" type="text" class="form-control" formControlName="militaryRank" mdbInput mdbValidate
+                   [validateSuccess]="false">
+            <label for="militaryRank">Stopień</label>
+            <mdb-error *ngIf="first.invalid && (first.dirty || first.touched)">Pole jest wymagane</mdb-error>
+          </div>
+            <div class="md-form">
+                <input id="first" type="text" class="form-control" formControlName="first" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="first">Imię</label>
+                <mdb-error *ngIf="first.invalid && (first.dirty || first.touched)">Pole jest wymagane</mdb-error>
+            </div>
+            <div class="md-form">
+                <input id="last" type="text" class="form-control" formControlName="last" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="last">Nazwisko</label>
+                <mdb-error *ngIf="last.invalid && (last.dirty || last.touched)">Pole jest wymagane</mdb-error>
+            </div>
+            <div class="md-form">
+                <input id="email" type="text" class="form-control" formControlName="email" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="email">Email</label>
+                <mdb-error *ngIf="email.invalid && (email.dirty || email.touched)">Pole jest wymagane</mdb-error>
+            </div>
+            <div class="md-form">
+                <input id="pesel" type="text" class="form-control" formControlName="pesel" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="pesel">Pesel</label>
+                <mdb-error *ngIf="pesel.invalid && (pesel.dirty || pesel.touched)">Pole jest wymagane</mdb-error>
+            </div>
+            <div class="md-form">
+                <input id="phone" type="text" class="form-control" formControlName="phone" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="phone">Numer telefonu</label>
+                <mdb-error *ngIf="phone.invalid && (phone.dirty || phone.touched)">Pole jest wymagane</mdb-error>
+            </div>
+            <div class="md-form">
+                <input id="address" type="text" class="form-control" formControlName="address" mdbInput mdbValidate
+                    [validateSuccess]="false">
+                <label for="address">Adres</label>
+                <mdb-error *ngIf="address.invalid && (address.dirty || address.touched)">Pole jest wymagane</mdb-error>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="modalRef.hide()"
+            mdbWavesEffect>Zamknij
+        </button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect
+            [disabled]="form.invalid" (click)="editRow()">Zapisz
+        </button>
+    </div>
+</div>
