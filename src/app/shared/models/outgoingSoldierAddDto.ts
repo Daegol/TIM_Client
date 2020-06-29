@@ -1,8 +1,9 @@
 import { Guid } from 'guid-typescript';
 
 export class outgoingSoldierAddDto {
-  MilitaryRank: string;
-  FirstName: string;
-  LastName: string;
-  PhoneNumber: string;
+  StartDate: any;
+  EndDate: any;
+  Where: string;
+  Type: string;
+  SoldierId: any;
 }

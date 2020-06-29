@@ -19,8 +19,8 @@ export class BookComponent implements OnInit {
   @ViewChild(MdbTableDirective, { static: true }) mdbTable: MdbTableDirective;
   @ViewChild(MdbTablePaginationComponent, { static: true }) mdbTablePagination: MdbTablePaginationComponent;
   elements: SoldierTable[] = [];
-  headElements = ['Id', 'Stopień', 'Imię', 'Nazwisko', 'Numer telefonu', 'Wyjście', 'Powrót', 'Akcja'];
-  tableNames = ['id','militaryRank', 'firstName', 'lastName', 'phoneNumber', 'outgoingTime','backTime'];
+  headElements = [ 'Stopień', 'Imię', 'Nazwisko', 'Numer telefonu', 'Wyjście', 'Powrót', 'Akcja'];
+  tableNames = ['militaryRank', 'firstName', 'lastName', 'phoneNumber', 'startDate','endDate'];
   searchText = '';
   previous: string;
 
@@ -87,9 +87,9 @@ export class BookComponent implements OnInit {
 
   removeRow(el: any) {
     const elementIndex = this.elements.findIndex((elem: any) => el === elem);
-    this.soldierService.deleteLeave(this.elements[elementIndex].pesel).pipe(first()).subscribe(
+    this.soldierService.deleteLeave(this.elements[elementIndex].soldierId).pipe(first()).subscribe(
       success => {
-        this.alertService.success('Użytkownik został usunięty');
+        this.alertService.success('Żołnierz wrócił na pododdział');
         //this.getStudents();
       },
       error => {

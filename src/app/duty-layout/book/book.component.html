@@ -29,9 +29,12 @@
           </thead>
           <tbody #row>
           <tr *ngFor="let el of elements; let i = index">
-            <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">
-              {{el.id}}
-            </th>
+<!--            <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">-->
+<!--              {{el.id}}-->
+<!--            </th>-->
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              {{el.militaryRank}}
+            </td>
             <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
               {{el.firstName}}
             </td>
@@ -39,13 +42,13 @@
               {{el.lastName}}
             </td>
             <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
-              {{el.email}}
-            </td>
-            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
-              {{el.pesel}}
-            </td>
-            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
               {{el.phoneNumber}}
+            </td>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              {{el.startDate}}
+            </td>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              {{el.endDate}}
             </td>
             <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
 <!--              <button mdbBtn color="warning" size="sm" mdbWavesEffect (click)="editRow(el)">Edytuj</button>-->

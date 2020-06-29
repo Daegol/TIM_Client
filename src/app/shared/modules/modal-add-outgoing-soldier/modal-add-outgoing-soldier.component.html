@@ -3,54 +3,69 @@
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">×</span>
     </button>
-    <h4 class="modal-title w-100" id="myModalLabel">Dodaj użytkownika</h4>
+    <h4 class="modal-title w-100" id="myModalLabel">Dodaj wyjście</h4>
   </div>
   <div class="modal-body">
     <form [formGroup]="validationForm">
       <div class="row">
         <div class="col">
           <div class="md-form">
-            <input mdbInput mdbValidate formControlName="militaryRankForm" minLength="8" maxLength="25"
+            <select class="browser-default custom-select " formControlName="soldierForm">
+              <option selected value="0">Wybierz żołnierza</option>
+              <option *ngFor="let el of soldierElements; let i = index"
+                      value={{el.id}}>
+                {{el.firstName}} {{el.lastName}} {{el.pesel}}
+              </option>
+            </select>
+<!--            <mdb-error *ngIf="startDateForm.invalid && (startDateForm.dirty || startDateForm.touched)">-->
+<!--              Musisz wybrać żołnierza-->
+<!--            </mdb-error>-->
+<!--            <mdb-success *ngIf="startDateForm.valid && (startDateForm.dirty || startDateForm.touched)">-->
+<!--              Ok-->
+<!--            </mdb-success>-->
+          </div>
+          <div class="md-form">
+            <input mdbInput mdbValidate formControlName="startDateForm" minLength="8" maxLength="25"
                    type="text" class="form-control" id="form5">
-            <label for="form6">Stopień</label>
-            <mdb-error *ngIf="militaryRankForm.invalid && (militaryRankForm.dirty || militaryRankForm.touched)">
-              Musisz podać stopień
+            <label for="form6">Data wyjścia</label>
+            <mdb-error *ngIf="startDateForm.invalid && (startDateForm.dirty || startDateForm.touched)">
+              Musisz wybrać datę
             </mdb-error>
-            <mdb-success *ngIf="militaryRankForm.valid && (militaryRankForm.dirty || militaryRankForm.touched)">
+            <mdb-success *ngIf="startDateForm.valid && (startDateForm.dirty || startDateForm.touched)">
               Ok
             </mdb-success>
           </div>
           <div class="md-form">
-            <input mdbInput mdbValidate formControlName="firstNameForm" minLength="8" maxLength="25"
+            <input mdbInput mdbValidate formControlName="endDateForm" minLength="8" maxLength="25"
                    type="text" class="form-control" id="form6">
-            <label for="form6">Imię</label>
-            <mdb-error *ngIf="firstNameForm.invalid && (firstNameForm.dirty || firstNameForm.touched)">
-              Musisz podać imię
+            <label for="form6">Data powrotu</label>
+            <mdb-error *ngIf="endDateForm.invalid && (endDateForm.dirty || endDateForm.touched)">
+              Musisz wybrać datę
             </mdb-error>
-            <mdb-success *ngIf="firstNameForm.valid && (firstNameForm.dirty || firstNameForm.touched)">
+            <mdb-success *ngIf="endDateForm.valid && (endDateForm.dirty || endDateForm.touched)">
               Ok
             </mdb-success>
           </div>
           <div class="md-form">
-            <input mdbInput mdbValidate formControlName="lastNameForm" minLength="8" maxLength="25"
+            <input mdbInput mdbValidate formControlName="whereForm" minLength="8" maxLength="25"
                    type="text" class="form-control" id="form1">
-            <label for="form1">Nazwisko</label>
-            <mdb-error *ngIf="lastNameForm.invalid && (lastNameForm.dirty || lastNameForm.touched)">
-              Musisz podać nazwisko
+            <label for="form1">Gdzie</label>
+            <mdb-error *ngIf="whereForm.invalid && (whereForm.dirty || whereForm.touched)">
+              Musisz podać gdzie
             </mdb-error>
-            <mdb-success *ngIf="lastNameForm.valid && (lastNameForm.dirty || lastNameForm.touched)">
+            <mdb-success *ngIf="whereForm.valid && (whereForm.dirty || whereForm.touched)">
               Ok
             </mdb-success>
           </div>
           <div class="md-form">
-            <input mdbInput mdbValidate formControlName="phoneForm" minLength="8" maxLength="25"
+            <input mdbInput mdbValidate formControlName="typeForm" minLength="8" maxLength="25"
                    type="tel" class="form-control" id="form7">
-            <label for="form7">Numer telefonu</label>
-            <mdb-error *ngIf="phoneForm.invalid && (phoneForm.dirty || phoneForm.touched)">
-              Numer telefonu niepoprawny
+            <label for="form7">Cel</label>
+            <mdb-error *ngIf="typeForm.invalid && (typeForm.dirty || typeForm.touched)">
+              Musisz podać cel
             </mdb-error>
-            <mdb-success *ngIf="phoneForm.valid && (phoneForm.dirty || phoneForm.touched)">
-              Numer telefonu poprawny
+            <mdb-success *ngIf="typeForm.valid && (typeForm.dirty || typeForm.touched)">
+              Cel poprawny
             </mdb-success>
           </div>
         </div>

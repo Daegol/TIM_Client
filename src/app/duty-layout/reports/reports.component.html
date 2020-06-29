@@ -1,1 +1,59 @@
-<p>reports works!</p>
+<div [@routerTransition]>
+  <app-page-header [heading]="'Książka wychodzących'" [icon]="'fa-child'"></app-page-header>
+  <div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-2">Lista żołnierzy</h3>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="md-form">
+            <input type="text" [(ngModel)]="searchText" class="form-control" id="search" mdbInput />
+            <label for="search">Szukaj</label>
+          </div>
+        </div>
+        <div class="col-md-4 mx-auto text-center">
+                    <div class="md-form">
+                      <button mdbBtn color="success" size="xl" mdbWavesEffect (click)="addRow()">Dodaj</button>
+                    </div>
+        </div>
+      </div>
+      <div id="table">
+        <table mdbTable #tableEl="mdbTable" stickyHeader="true" hover="true" striped="true"
+               class="z-depth-1 text-center" >
+          <thead class="sticky-top">
+          <tr>
+            <th *ngFor="let head of headElements; let i = index" [mdbTableSort]="elements" [sortBy]="tableNames[i]"
+                scope="col">{{head | titlecase}}
+              <mdb-icon fas icon="sort"></mdb-icon>
+            </th>
+          </tr>
+          </thead>
+          <tbody #row>
+          <tr *ngFor="let el of elements; let i = index">
+            <!--            <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">-->
+            <!--              {{el.id}}-->
+            <!--            </th>-->
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              {{el.soldierId}}
+            </td>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              {{el.text}}
+            </td>
+              <!--            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">-->
+              <!--                            <button mdbBtn color="warning" size="sm" mdbWavesEffect (click)="editRow(el)">Edytuj</button>-->
+              <!--              <button mdbBtn color="danger" size="sm" mdbWavesEffect (click)="removeRow(el)">Usuń</button>-->
+              <!--            </td>-->
+          </tr>
+          </tbody>
+          <tfoot class="grey lighten-5 w-100">
+          <tr>
+            <td colspan="8">
+              <mdb-table-pagination [tableEl]="tableEl" paginationAlign="" [searchDataSource]="elements">
+              </mdb-table-pagination>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,13 +14,15 @@ import { ErrorInterceptorProvider } from './shared/interceptors/error.intercepto
 import {ModalEditComponent} from './shared/modules/modal-edit/modal-edit.component';
 import {ModalAddComponent} from './shared/modules/modal-add/modal-add.component';
 import { ModalAddOutgoingSoldierComponent } from './shared/modules/modal-add-outgoing-soldier/modal-add-outgoing-soldier.component';
+import { ModalAddReportComponent } from './shared/modules/modal-add-report/modal-add-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalEditComponent,
     ModalAddComponent,
-    ModalAddOutgoingSoldierComponent
+    ModalAddOutgoingSoldierComponent,
+    ModalAddReportComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { ModalAddOutgoingSoldierComponent } from './shared/modules/modal-add-out
   providers: [AddHeaderInterceptorProvider,
     ErrorInterceptorProvider
   ],
-  entryComponents: [ModalEditComponent, ModalAddComponent,ModalAddOutgoingSoldierComponent],
+  entryComponents: [ModalEditComponent, ModalAddComponent,ModalAddOutgoingSoldierComponent,ModalAddReportComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

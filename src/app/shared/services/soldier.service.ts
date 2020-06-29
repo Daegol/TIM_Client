@@ -40,12 +40,16 @@ export class SoldierService {
     return this.http.get<SoldierTable[]>(`${environment.apiUrl}OutgoingBook/outgoingSoldiers/${soldierOnDutyId}`);
   }
 
+  getAllSettlement(soldierOnDutyId: any) {
+    return this.http.get<SoldierTable[]>(`${environment.apiUrl}Soldier/soldiers/${soldierOnDutyId}`);
+  }
+
   add(soldier: outgoingSoldierAddDto) {
     return this.http.post(`${environment.apiUrl}OutgoingBook/add`, soldier);
   }
 
   deleteLeave(leaveId: any) {
-    return this.http.delete(`${environment.apiUrl}/OutgoingBook/delete/${leaveId}`);
+    return this.http.delete(`${environment.apiUrl}OutgoingBook/delete/${leaveId}`);
   }
   //
   // update(student: Student) {

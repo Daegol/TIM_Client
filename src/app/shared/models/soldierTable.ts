@@ -1,9 +1,10 @@
 export class SoldierTable {
-  id: number;
+  soldierId: number;
   militaryRank: string;
   firstName: string;
   lastName: string;
-  email: string;
   phoneNumber: string;
-  pesel: string;
+  startDate: string;
+  endDate: string;
+  status: string;
 }
