@@ -22,7 +22,7 @@ export class EditCompanyComponent implements OnInit {
   soldierElements: SoldiersInCompany[] = [];
   commanderElements: CommanderInCompany[] = [];
   soldierHeadElements = ['Wybierz', 'Imię', 'Nazwisko', 'Pesel', 'Klasa'];
-  soldierTableNames = ['isChecked', 'firstName', 'lastName', 'pesel', 'soldierClass'];
+  soldierTableNames = ['isChecked', 'firstName', 'lastName', 'pesel', 'company'];
   searchText = '';
   previous: string;
   form: FormGroup;

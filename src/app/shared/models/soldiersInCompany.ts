@@ -6,5 +6,5 @@ export class SoldiersInCompany {
   firstName: string;
   lastName: string;
   pesel: string;
-  soldierCompany: string;
+  company: string;
 }

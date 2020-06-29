@@ -20,8 +20,8 @@ export class AddCompanyComponent implements OnInit {
   @ViewChild(MdbTablePaginationComponent, { static: true }) mdbTablePagination: MdbTablePaginationComponent;
   soldierElements: SoldiersInCompany[] = [];
   commanderElements: CommanderInCompany[] = [];
-  soldierHeadElements = ['Wybierz', 'Imię', 'Nazwisko', 'Pesel', 'Klasa'];
-  soldierTableNames = ['isChecked', 'firstName', 'lastName', 'pesel', 'soldierClass'];
+  soldierHeadElements = ['Wybierz', 'Imię', 'Nazwisko', 'Pesel', 'Komapnia'];
+  soldierTableNames = ['isChecked', 'firstName', 'lastName', 'pesel', 'company'];
   searchText = '';
   previous: string;
   form: FormGroup;
