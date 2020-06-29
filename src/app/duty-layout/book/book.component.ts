@@ -87,10 +87,12 @@ export class BookComponent implements OnInit {
 
   removeRow(el: any) {
     const elementIndex = this.elements.findIndex((elem: any) => el === elem);
-    this.soldierService.deleteLeave(this.elements[elementIndex].soldierId).pipe(first()).subscribe(
+    this.soldierService.deleteLeave(this.elements[elementIndex].leaveId).pipe(first()).subscribe(
       success => {
         this.alertService.success('Żołnierz wrócił na pododdział');
-        //this.getStudents();
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const decodedToken = this.getDecodedAccessToken(currentUser.token);
+        this.getSoldiers(decodedToken.nameid)
       },
       error => {
         this.alertService.error(error.message);
